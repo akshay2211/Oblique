@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:background="#fff" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ak.sh.ay.oblique.ObliqueView
+        android:id="@+id/obliqueView"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:scaleType="centerCrop"
+        app:basecolor="#2E3192"
+        app:ending_slant_angle="60"
+        app:starting_slant_angle="90" />
+<RelativeLayout
+    android:layout_weight="1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <ak.sh.ay.oblique.ObliqueView
+        android:layout_weight="1"
+        android:layout_marginTop="120dp"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:scaleType="centerCrop"
+        app:basecolor="#2E3192"
+        app:ending_slant_angle="90"
+        app:starting_slant_angle="60" />
+</RelativeLayout>
+</LinearLayout>

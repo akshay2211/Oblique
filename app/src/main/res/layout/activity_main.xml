@@ -1,27 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/activity_main"
+    android:background="#333333"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin">
-
-    <android.support.v7.widget.AppCompatSeekBar
-        android:id="@+id/seekbar"
+    android:layout_height="match_parent">
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content">
 
-    <ak.sh.ay.oblique.ObliqueView
-        android:id="@+id/obliqueView"
-        android:layout_width="500dp"
-        android:layout_height="200dp"
-        android:layout_centerInParent="true"
-        android:scaleType="fitXY"
-        android:src="@drawable/image1"
-        app:ending_slant_angle="30"
-        app:starting_slant_angle="30" />
+        <ak.sh.ay.oblique.ObliqueView
+            android:id="@+id/obliqueView"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
 
+            android:scaleType="centerCrop"
+            app:basecolor="#2E3192"
+            app:ending_slant_angle="0"
+            app:starting_slant_angle="15" />
+
+        <ak.sh.ay.oblique.ObliqueView
+            android:id="@+id/obliqueView1"
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@+id/obliqueView"
+            android:scaleType="centerCrop"
+            app:basecolor="#D4145A"
+            app:ending_slant_angle="40"
+            app:starting_slant_angle="0" />
+
+        <ak.sh.ay.oblique.ObliqueView
+            android:id="@+id/obliqueView2"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_marginTop="100dp"
+            android:scaleType="fitXY"
+            android:layout_below="@+id/obliqueView"
+
+            android:layout_alignParentBottom="true"
+
+            app:basecolor="#FBB03B"
+            app:ending_slant_angle="180"
+            app:starting_slant_angle="150" />
+
+
+        <ak.sh.ay.oblique.ObliqueView
+            android:id="@+id/obliqueView4"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_alignParentBottom="true"
+            android:scaleType="fitXY"
+            app:basecolor="#009245"
+            app:ending_slant_angle="180"
+            app:starting_slant_angle="140" />
+
+        <ak.sh.ay.oblique.ObliqueView
+            android:id="@+id/obliqueView3"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:layout_alignParentBottom="true"
+            android:scaleType="fitXY"
+            app:basecolor="#00537E"
+            app:ending_slant_angle="25"
+            app:starting_slant_angle="0" />
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+        <TextView
+            android:paddingLeft="20dp"
+            android:paddingBottom="20dp"
+            android:textSize="65dp"
+            android:textColor="#fff"
+            android:text="Oblique"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_marginTop="25dp"
+            android:padding="25dp"
+            android:textColor="#fff"
+            android:gravity="left"
+            android:textSize="26dp"
+            android:text="A slanted edged\nImageview Library"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+     <TextView
+         android:id="@+id/sample"
+         android:drawableTop="@drawable/ic_style_black_24dp"
+            android:paddingRight="25dp"
+         android:layout_gravity="right"
+            android:textColor="#fff"
+            android:gravity="right"
+            android:textSize="28dp"
+            android:text="Sample  "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+     <TextView
+         android:drawableTop="@drawable/ic_gesture_black_24dp"
+            android:padding="15dp"
+         android:layout_marginLeft="20dp"
+         android:layout_gravity="left"
+            android:textColor="#333333"
+            android:gravity="right"
+            android:textSize="28dp"
+            android:text="Slanting angle\nDemonstrator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
 </RelativeLayout>
+

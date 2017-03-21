@@ -2,6 +2,8 @@ package ak.sh.ay.oblique;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapShader;
+import android.graphics.Canvas;
+import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Shader;
@@ -18,11 +20,10 @@ import static android.graphics.Paint.ANTI_ALIAS_FLAG;
  */
 
 public class Config {
-    private static final Paint bitmapPaint = new Paint(ANTI_ALIAS_FLAG);
-    private static Bitmap bitmap;
-    private static BitmapShader bitmapShader;
 
-    public static int getTanWithOutConflict(float h, float w, float angle, double hype) {
+
+
+    public int getTanWithOutConflict(float h, float w, float angle, double hype) {
         if (angle > 90) {
             angle = 180 - angle;
         }
@@ -34,19 +35,8 @@ public class Config {
         return getTanWithOutConflict(p, w, angle, hype);
     }
 
-    public static Bitmap getBitmap() {
-        return bitmap;
-    }
 
-    public static Paint getBitmapPaint() {
-        return bitmapPaint;
-    }
-
-    public static BitmapShader getBitmapShader() {
-        return bitmapShader;
-    }
-
-    public static Path getPath(float h, float w, float left_angle, float right_angle) {
+    public Path getPath(float h, float w, float left_angle, float right_angle) {
 
         double hyp = Math.hypot(w, h);
         int left_base = getTanWithOutConflict(h, w, left_angle, hyp);
@@ -87,9 +77,8 @@ public class Config {
                 }
             }
 
-       /*     Log.e("left_angle " + left_angle + "  right_angle " + right_angle,
+            Log.e("left_angle " + left_angle + "  right_angle " + right_angle,
                     " | a1 " + a1 + " | a2 " + a2 + " | b1 " + b1 + " | b2 " + b2 + " | c1 " + c1 + " | c2 " + c2 + " | d1 " + d1 + " | d2 " + d2);
-       */
         } catch (Exception e) {
             Log.e("exception", "" + e.getMessage());
         }
@@ -103,34 +92,4 @@ public class Config {
         return path;
     }
 
-
-    public static void setupBitmap(ImageView imageView) {
-        Drawable drawable = imageView.getDrawable();
-        if (drawable != null) {
-            if (drawable instanceof BitmapDrawable)
-                bitmap = ((BitmapDrawable) drawable).getBitmap();
-            else {
-                try {
-                    int COLOR_DRAWABLE_DIMENSIONS = 2;
-                    if (drawable instanceof ColorDrawable)
-                        bitmap = Bitmap.createBitmap(COLOR_DRAWABLE_DIMENSIONS, COLOR_DRAWABLE_DIMENSIONS, Bitmap.Config.ARGB_8888);
-                    else
-                        bitmap = Bitmap.createBitmap(drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
-
-                   /* Canvas canvas = new Canvas(bitmap);
-                    drawable.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
-                    drawable.draw(canvas);*/
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-            if (bitmap == null) {
-                imageView.invalidate();
-                return;
-            }
-            bitmapShader = new BitmapShader(bitmap, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP);
-            bitmapPaint.setShader(bitmapShader);
-            imageView.invalidate();
-        }
-    }
 }
