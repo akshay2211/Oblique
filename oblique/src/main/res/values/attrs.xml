@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ObliqueView">
+        <attr name="scaleType">
+            <enum name="centerCrop" value="0" />
+            <enum name="fitXY" value="1" />
+        </attr>
+        <attr name="starting_slant_angle" format="float" />
+        <attr name="ending_slant_angle" format="float" />
+        <attr name="basecolor" format="color" />
+        <attr name="src" format="reference" />
+    </declare-styleable>
+</resources>
