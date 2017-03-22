@@ -9,7 +9,7 @@ Demo
 
 ![](media/media_0.png)
 ![](media/media_1.png)
-![](media/media_2.png)
+![](media/media_2.gif)
 
 
 Usage
