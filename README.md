@@ -6,6 +6,36 @@ A Slanted Edged ImageView library for Android
 ![](media/media_0.png)
 ![](media/media_1.png)
 
+Usage
+-----
+
+```xml
+ <ak.sh.ay.oblique.ObliqueView
+        android:id="@+id/obliqueView"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:layout_weight="0.26"
+        android:scaleType="centerCrop"
+        android:src="@drawable/img"
+        app:ending_slant_angle="20"
+        app:starting_slant_angle="20" />
+```
+you can also add solid color by adding
+
+```xml
+ app:basecolor="#D4145A"
+```
+
+or can do all that by java
+```groovy
+obliqueView.setStartAngle(20);
+obliqueView.setEndAngle(20);
+```
+set image or add solid color
+```java
+ obliqueView.setBaseColor(R.color.colorAccent);
+```
+
 Download
 --------
 
