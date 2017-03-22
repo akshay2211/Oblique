@@ -1,19 +1,7 @@
 package ak.sh.ay.oblique;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapShader;
-import android.graphics.Canvas;
-import android.graphics.Matrix;
-import android.graphics.Paint;
 import android.graphics.Path;
-import android.graphics.Shader;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
 import android.util.Log;
-import android.widget.ImageView;
-
-import static android.graphics.Paint.ANTI_ALIAS_FLAG;
 
 /**
  * Created by akshay on 21/3/17.
@@ -77,8 +65,9 @@ public class Config {
                 }
             }
 
-            Log.e("left_angle " + left_angle + "  right_angle " + right_angle,
+        /*    Log.e("left_angle " + left_angle + "  right_angle " + right_angle,
                     " | a1 " + a1 + " | a2 " + a2 + " | b1 " + b1 + " | b2 " + b2 + " | c1 " + c1 + " | c2 " + c2 + " | d1 " + d1 + " | d2 " + d2);
+        */
         } catch (Exception e) {
             Log.e("exception", "" + e.getMessage());
         }

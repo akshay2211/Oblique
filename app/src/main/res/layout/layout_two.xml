@@ -1,30 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="horizontal"
-    android:background="#fff" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="220dp"
+    android:layout_marginBottom="10dp"
+    android:background="#fff"
+    android:orientation="horizontal">
+
     <ak.sh.ay.oblique.ObliqueView
         android:id="@+id/obliqueView"
-        android:layout_weight="1"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="220dp"
+        android:layout_weight="0.45"
         android:scaleType="centerCrop"
-        app:basecolor="#2E3192"
+        android:src="@drawable/pretty_3"
         app:ending_slant_angle="60"
         app:starting_slant_angle="90" />
-<RelativeLayout
-    android:layout_weight="1"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-    <ak.sh.ay.oblique.ObliqueView
-        android:layout_weight="1"
-        android:layout_marginTop="120dp"
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:scaleType="centerCrop"
-        app:basecolor="#2E3192"
-        app:ending_slant_angle="90"
-        app:starting_slant_angle="60" />
-</RelativeLayout>
+        android:layout_height="match_parent"
+        android:layout_marginLeft="-30dp"
+        android:layout_weight="0.55"
+        android:orientation="vertical">
+
+        <TextView
+            fontPath="fonts/Roboto-Medium.ttf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="10dp"
+            android:text="@string/heading"
+            android:textColor="#1b1b1b"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:paddingLeft="7dp"
+            android:paddingRight="7dp"
+            android:text="@string/sample_text_large"
+            android:textColor="#1b1b1b"
+            android:textSize="13sp" />
+
+        <ak.sh.ay.oblique.ObliqueView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_gravity="bottom"
+            android:scaleType="centerCrop"
+            android:src="@drawable/pretty_1"
+            app:ending_slant_angle="90"
+            app:starting_slant_angle="60" />
+    </LinearLayout>
 </LinearLayout>

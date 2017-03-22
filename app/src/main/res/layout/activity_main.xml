@@ -3,7 +3,6 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/activity_main"
-    android:background="#333333"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <RelativeLayout
@@ -14,7 +13,6 @@
             android:id="@+id/obliqueView"
             android:layout_width="match_parent"
             android:layout_height="150dp"
-
             android:scaleType="centerCrop"
             app:basecolor="#2E3192"
             app:ending_slant_angle="0"
@@ -35,11 +33,11 @@
             android:id="@+id/obliqueView2"
             android:layout_width="match_parent"
             android:layout_height="400dp"
-            android:layout_marginTop="100dp"
-            android:scaleType="fitXY"
-            android:layout_below="@+id/obliqueView"
-
             android:layout_alignParentBottom="true"
+            android:layout_below="@+id/obliqueView"
+            android:layout_marginTop="100dp"
+
+            android:scaleType="fitXY"
 
             app:basecolor="#FBB03B"
             app:ending_slant_angle="180"
@@ -68,47 +66,49 @@
     </RelativeLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
         <TextView
-            android:paddingLeft="20dp"
+            fontPath="fonts/Roboto-Thin.ttf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:paddingBottom="20dp"
-            android:textSize="65dp"
-            android:textColor="#fff"
+            android:paddingLeft="20dp"
             android:text="Oblique"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:layout_marginTop="25dp"
-            android:padding="25dp"
             android:textColor="#fff"
-            android:gravity="left"
-            android:textSize="26dp"
-            android:text="A slanted edged\nImageview Library"
+            android:textSize="65sp" />
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:gravity="left"
+            android:padding="25dp"
+            android:text="A slanted edged\nImageview Library"
+            android:textColor="#fff"
+            android:textSize="26sp" />
      <TextView
          android:id="@+id/sample"
-         android:drawableTop="@drawable/ic_style_black_24dp"
-            android:paddingRight="25dp"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
          android:layout_gravity="right"
-            android:textColor="#fff"
+         android:drawableTop="@drawable/ic_style_black_24dp"
             android:gravity="right"
-            android:textSize="28dp"
+         android:paddingRight="25dp"
             android:text="Sample  "
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+         android:textColor="#fff"
+         android:textSize="28sp" />
      <TextView
-         android:drawableTop="@drawable/ic_gesture_black_24dp"
-            android:padding="15dp"
-         android:layout_marginLeft="20dp"
+         android:id="@+id/demonstrator"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
          android:layout_gravity="left"
-            android:textColor="#333333"
-            android:gravity="right"
-            android:textSize="28dp"
-            android:text="Slanting angle\nDemonstrator"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+         android:layout_marginLeft="20dp"
+         android:drawableTop="@drawable/ic_gesture_black_24dp"
+         android:gravity="center"
+         android:padding="15dp"
+         android:text="Oblique\nDemonstrator"
+         android:textColor="#fff"
+         android:textSize="28sp" />
     </LinearLayout>
 </RelativeLayout>
 

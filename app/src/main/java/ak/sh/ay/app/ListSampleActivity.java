@@ -1,5 +1,6 @@
 package ak.sh.ay.app;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -8,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import ak.sh.ay.app.adapters.SampleAdapter;
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class ListSampleActivity extends AppCompatActivity {
     @BindView(R.id.recycleview)
@@ -23,5 +25,11 @@ public class ListSampleActivity extends AppCompatActivity {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recycleview.setLayoutManager(linearLayoutManager);
         recycleview.setAdapter(sampleAdapter);
+        sampleAdapter.addData();
+    }
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
     }
 }

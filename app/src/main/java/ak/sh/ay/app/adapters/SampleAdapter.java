@@ -16,12 +16,19 @@ import butterknife.ButterKnife;
  */
 
 public class SampleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-    private ArrayList<Object> mDataset = new ArrayList<>();
+    private ArrayList<String> mDataset = new ArrayList<>();
     private Context context;
 
     public SampleAdapter(Context context) {
         this.context = context;
 
+    }
+
+    public void addData() {
+        for (int i = 0; i < 4; i++) {
+            mDataset.add("Sample txt " + i);
+        }
+        notifyDataSetChanged();
     }
 
     @Override
@@ -33,12 +40,14 @@ public class SampleAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = null;
-        if (viewType == 0) {
+        if (viewType % 4 == 0) {
             v = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_one, parent, false);
-        } else if (viewType == 1) {
+        } else if (viewType % 4 == 1) {
             v = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_two, parent, false);
-        } else if (viewType == 2) {
+        } else if (viewType % 4 == 2) {
             v = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_three, parent, false);
+        } else if (viewType % 4 == 3) {
+            v = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_four, parent, false);
         }
         return new ViewHolder(v);
     }
