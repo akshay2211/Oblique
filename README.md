@@ -3,8 +3,14 @@ Oblique
 
 A Slanted Edged ImageView library for Android
 
+Demo
+----
+[Oblique Android Sample App][1]
+
 ![](media/media_0.png)
 ![](media/media_1.png)
+![](media/media_2.png)
+
 
 Usage
 -----
@@ -14,7 +20,6 @@ Usage
         android:id="@+id/obliqueView"
         android:layout_width="match_parent"
         android:layout_height="160dp"
-        android:layout_weight="0.26"
         android:scaleType="centerCrop"
         android:src="@drawable/img"
         app:ending_slant_angle="20"
@@ -81,5 +86,6 @@ License
     limitations under the License.
 
 
+ [1]: https://play.google.com/store/apps/details?id=ak.sh.ay.app
  [2]: https://dl.bintray.com/fxn769/android_projects/com/fxn769/oblique/1.0/oblique-1.0-javadoc.jar
  [snap]: https://oss.sonatype.org/content/repositories/snapshots/

@@ -51,5 +51,5 @@
         android:scaleType="centerCrop"
         android:src="@drawable/pretty_1"
         app:ending_slant_angle="0"
-        app:starting_slant_angle="15" />
+        app:starting_slant_angle="0" />
 </RelativeLayout>
