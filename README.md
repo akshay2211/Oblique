@@ -5,7 +5,7 @@ With Oblique explore new styles of displaying images
 
 Demo
 ----
-[#Oblique Android Sample App][1]
+[Oblique Android Sample App][1]
 
 ![](media/media_0.png)
 ![](media/media_1.png)
