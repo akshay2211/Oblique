@@ -87,5 +87,5 @@ License
 
 
  [1]: https://play.google.com/store/apps/details?id=ak.sh.ay.app
- [2]: https://dl.bintray.com/fxn769/android_projects/com/fxn769/oblique/1.0/oblique-1.0-javadoc.jar
+ [2]: https://dl.bintray.com/fxn769/android_projects/com/fxn769/oblique/1.0/oblique-1.0-sources.jar
  [snap]: https://oss.sonatype.org/content/repositories/snapshots/
