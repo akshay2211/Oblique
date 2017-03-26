@@ -2,14 +2,16 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="260dp"
+    android:layout_marginBottom="10dp"
     android:background="#fff"
     android:orientation="horizontal">
 
     <LinearLayout
+        android:layout_marginRight="-60dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.37"
+        android:layout_weight="0.40"
         android:orientation="vertical">
 
         <TextView
@@ -26,26 +28,28 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:padding="5dp"
+            android:padding="2dp"
             android:text="@string/sample_text"
             android:textColor="#1b1b1b"
-            android:textSize="13sp" />
+            android:textSize="14sp" />
     </LinearLayout>
 
     <ak.sh.ay.oblique.ObliqueView
         android:id="@+id/obliqueView"
         android:layout_width="match_parent"
-        android:layout_height="160dp"
-        android:layout_weight="0.26"
+        android:layout_height="260dp"
+        android:layout_weight="0.15"
         android:scaleType="centerCrop"
         android:src="@drawable/pretty_4"
-        app:ending_slant_angle="80"
-        app:starting_slant_angle="80" />
+        app:ending_slant_angle="65"
+        app:starting_slant_angle="65" />
 
     <LinearLayout
+        android:layout_marginTop="110dp"
+        android:layout_marginLeft="-60dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.37"
+        android:layout_weight="0.40"
         android:orientation="vertical">
 
         <TextView
@@ -65,6 +69,6 @@
             android:padding="5dp"
             android:text="@string/sample_text"
             android:textColor="#1b1b1b"
-            android:textSize="13sp" />
+            android:textSize="14sp" />
     </LinearLayout>
 </LinearLayout>

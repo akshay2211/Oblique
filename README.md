@@ -1,3 +1,5 @@
+
+
 Oblique
 =======
 
@@ -8,8 +10,11 @@ Demo
 [Oblique Android Sample App][1]
 
 ![](media/media_0.png)
-![](media/media_1.png)
-![](media/media_2.gif)
+![](media/one.png)
+![](media/two.png)
+![](media/three.png)
+![](media/four.png)
+![](media/media_1.gif)
 
 
 Usage
@@ -44,7 +49,7 @@ set image or add solid color
 Download
 --------
 
-Download [the latest JAR][2] or grab via Gradle:
+ [ ![Download](https://api.bintray.com/packages/fxn769/android_projects/Oblique/images/download.svg) ](https://bintray.com/fxn769/android_projects/Oblique/_latestVersion)  or grab via Gradle:
 ```groovy
 compile 'com.fxn769:oblique:1.0'
 ```

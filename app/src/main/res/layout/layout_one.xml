@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="260dp"
     android:layout_marginBottom="10dp"
     android:background="#fff"
     android:orientation="vertical">
@@ -10,7 +10,7 @@
     <ak.sh.ay.oblique.ObliqueView
         android:id="@+id/obliqueView"
         android:layout_width="match_parent"
-        android:layout_height="170dp"
+        android:layout_height="165dp"
         android:scaleType="centerCrop"
         android:src="@drawable/pretty_1"
         app:ending_slant_angle="0"
@@ -38,6 +38,6 @@
         android:paddingRight="5dp"
         android:text="@string/sample_text_large"
         android:textColor="#1b1b1b"
-        android:textSize="13sp" />
+        android:textSize="14sp" />
 
 </LinearLayout>
