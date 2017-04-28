@@ -1,13 +1,19 @@
-[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Oblique-blue.svg?style=flat-square)](https://android-arsenal.com/details/1/5659)
 
 Oblique
 =======
 
 With Oblique explore new styles of displaying images
 
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Oblique-blue.svg?style=flat-square)](https://android-arsenal.com/details/1/5659)
+[ ![Download](https://api.bintray.com/packages/fxn769/android_projects/Oblique/images/download.svg) ](https://bintray.com/fxn769/android_projects/Oblique/_latestVersion)
+
+
+[Oblique Android Sample App][1]
+
+[ ![Download](https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png) ](https://play.google.com/store/apps/details?id=ak.sh.ay.app)
+
 Demo
 ----
-[Oblique Android Sample App][1]
 
 ![](media/media_0.png)
 ![](media/media_1.gif)
