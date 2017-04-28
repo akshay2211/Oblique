@@ -1,4 +1,4 @@
-
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Oblique-blue.svg?style=flat-square)](https://android-arsenal.com/details/1/5659)
 
 Oblique
 =======
@@ -10,11 +10,11 @@ Demo
 [Oblique Android Sample App][1]
 
 ![](media/media_0.png)
+![](media/media_1.gif)
 ![](media/one.png)
 ![](media/two.png)
 ![](media/three.png)
 ![](media/four.png)
-![](media/media_1.gif)
 
 
 Usage
