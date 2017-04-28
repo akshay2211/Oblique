@@ -5,7 +5,7 @@ Oblique
 With Oblique explore new styles of displaying images
 
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Oblique-blue.svg?style=flat-square)](https://android-arsenal.com/details/1/5659)
-[![](https://jitpack.io/v/akshay2211/Oblique.svg?style=flat-square)](https://jitpack.io/#akshay2211/Oblique)
+[![Release](https://jitpack.io/v/akshay2211/Oblique.svg?style=flat-square)](https://jitpack.io/#akshay2211/Oblique)
 [ ![Download](https://api.bintray.com/packages/fxn769/android_projects/Oblique/images/download.svg?style=flat-square) ](https://bintray.com/fxn769/android_projects/Oblique/_latestVersion)
 [![API](https://img.shields.io/badge/API-9%2B-blue.svg?style=flat-square)](https://android-arsenal.com/api?level=9)
 
