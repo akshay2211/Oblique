@@ -1,11 +1,9 @@
-
 Oblique
 =======
 
-[![Join the chat at https://gitter.im/Oblique22/Lobby](https://badges.gitter.im/Oblique22/Lobby.svg)](https://gitter.im/Oblique22/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
 With Oblique explore new styles of displaying images
 
+[![Join the chat at https://gitter.im/Oblique22/Lobby](https://badges.gitter.im/Oblique22/Lobby.svg)](https://gitter.im/Oblique22/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Oblique-blue.svg?style=flat-square)](https://android-arsenal.com/details/1/5659)
 [![Release](https://jitpack.io/v/akshay2211/Oblique.svg?style=flat-square)](https://jitpack.io/#akshay2211/Oblique)
 [![API](https://img.shields.io/badge/API-9%2B-blue.svg?style=flat-square)](https://android-arsenal.com/api?level=9)
