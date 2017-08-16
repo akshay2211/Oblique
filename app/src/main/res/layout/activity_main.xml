@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <RelativeLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/colorGrey">
+
     <RelativeLayout
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -64,10 +66,12 @@
             app:ending_slant_angle="25"
             app:starting_slant_angle="0" />
     </RelativeLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
         <TextView
             fontPath="fonts/Roboto-Thin.ttf"
             android:layout_width="match_parent"
@@ -77,6 +81,7 @@
             android:text="Oblique"
             android:textColor="#fff"
             android:textSize="65sp" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -86,29 +91,31 @@
             android:text="A slanted edged\nImageview Library"
             android:textColor="#fff"
             android:textSize="26sp" />
-     <TextView
-         android:id="@+id/sample"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:layout_gravity="right"
-         android:drawableTop="@drawable/ic_style_black_24dp"
+
+        <TextView
+            android:id="@+id/sample"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:drawableTop="@drawable/ic_style_black_24dp"
             android:gravity="right"
-         android:paddingRight="25dp"
+            android:paddingRight="25dp"
             android:text="Sample  "
-         android:textColor="#fff"
-         android:textSize="28sp" />
-     <TextView
-         android:id="@+id/demonstrator"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:layout_gravity="left"
-         android:layout_marginLeft="20dp"
-         android:drawableTop="@drawable/ic_gesture_black_24dp"
-         android:gravity="center"
-         android:padding="15dp"
-         android:text="Oblique\nDemonstrator"
-         android:textColor="#fff"
-         android:textSize="28sp" />
+            android:textColor="#fff"
+            android:textSize="28sp" />
+
+        <TextView
+            android:id="@+id/demonstrator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginLeft="20dp"
+            android:drawableTop="@drawable/ic_gesture_black_24dp"
+            android:gravity="center"
+            android:padding="15dp"
+            android:text="Oblique\nDemonstrator"
+            android:textColor="#fff"
+            android:textSize="28sp" />
     </LinearLayout>
 </RelativeLayout>
 
