@@ -65,21 +65,24 @@ public class ObliqueView extends android.support.v7.widget.AppCompatImageView {
     //Initialisation method
     private void init(Context context, AttributeSet attrs) {
         config = new Config(context, attrs);
-        config.setElevation(ViewCompat.getElevation(this));
         pdMode = new PorterDuffXfermode(PorterDuff.Mode.SRC_OVER);
-
     }
 
     //Getter and Setter methods
-    public float getAngle() {
+    public GradientAngle getAngle() {
         return config.getAngle();
     }
 
-    public void setAngle(@FloatRange(from = 0, to = 360) float angle) {
+    public void setAngle(GradientAngle angle) {
         config.setAngle(angle);
         invalidate();
     }
 
+    public void setShadow(float elevation) {
+        // ViewCompat.setShadow(this, elevation);
+        config.setElevation(elevation);
+        invalidate();
+    }
 
     public int getStartColor() {
         return config.getStartColor();
@@ -250,10 +253,14 @@ public class ObliqueView extends android.support.v7.widget.AppCompatImageView {
     @Override
     public ViewOutlineProvider getOutlineProvider() {
         shadowpath = new Path();
-        rect = new Rect(0, 0, (int) width, (int) height);
-        RectF r = new RectF(rect);
-        shadowpath.addRoundRect(r, config.getRadius(), config.getRadius(), Path.Direction.CCW);
-        shadowpath.op(config.getPathShadow(width, height), shadowpath, Path.Op.INTERSECT);
+        if (config.getRadius() == 0) {
+            shadowpath = path;
+        } else {
+            rect = new Rect(0, 0, (int) width, (int) height);
+            RectF r = new RectF(rect);
+            shadowpath.addRoundRect(r, config.getRadius(), config.getRadius(), Path.Direction.CCW);
+            shadowpath.op(path, shadowpath, Path.Op.INTERSECT);
+        }
         return new ViewOutlineProvider() {
             @Override
             public void getOutline(View view, Outline outline) {
@@ -274,7 +281,7 @@ public class ObliqueView extends android.support.v7.widget.AppCompatImageView {
                 paint.setColor(config.getBaseColor());
                 break;
             case 1:
-                paint.setShader(config.getLinearGradient(width, height));
+                paint.setShader(config.getLinearGradient(config.getAngle(), width, height));
                 break;
             case 2:
                 paint.setShader(config.getRadialGradient(width, height));
@@ -283,12 +290,10 @@ public class ObliqueView extends android.support.v7.widget.AppCompatImageView {
                 setupBitmap(this, width, height);
                 break;
         }
-        if (config.getRadius() != 0f) {
             paint.setStrokeJoin(Paint.Join.ROUND);    // set the join to round you want
             paint.setStrokeCap(Paint.Cap.ROUND);      // set the paint cap to round too
             paint.setPathEffect(new CornerPathEffect(config.getRadius()));
-        }
-        ViewCompat.setElevation(this, config.getElevation());
+        ViewCompat.setElevation(this, config.getShadow());
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP && ViewCompat.getElevation(this) > 0f) {
 
             try {

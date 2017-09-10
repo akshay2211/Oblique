@@ -7,13 +7,23 @@
             <enum name="radial_gradient" value="2" />
             <enum name="image" value="3" />
         </attr>
+        <attr name="angle">
+            <enum name="LEFT_TO_RIGHT" value="0" />
+            <enum name="RIGHT_TO_LEFT" value="1" />
+            <enum name="TOP_TO_BOTTOM" value="2" />
+            <enum name="BOTTOM_TO_TOP" value="3" />
+            <enum name="LEFT_TOP_TO_RIGHT_BOTTOM" value="4" />
+            <enum name="RIGHT_TOP_TO_LEFT_BOTTOM" value="5" />
+            <enum name="RIGHT_BOTTOM_TO_LEFT_TOP" value="6" />
+            <enum name="LEFT_BOTTOM_TO_RIGHT_TOP" value="7" />
+        </attr>
         <attr name="starting_slant_angle" format="float" />
         <attr name="ending_slant_angle" format="float" />
         <attr name="basecolor" format="color" />
         <attr name="startcolor" format="color" />
         <attr name="endcolor" format="color" />
-        <attr name="angle" format="float" />
-        <attr name="radius" format="reference" />
+        <attr name="radius" format="integer" />
+        <attr name="shadow" format="float" />
         <attr name="gradient" format="boolean" />
         <attr name="src" format="reference" />
     </declare-styleable>

@@ -16,11 +16,12 @@ import android.util.Log;
  */
 
 public class Config {
+    GradientAngle angle = GradientAngle.LEFT_TO_RIGHT;
     private int baseColor = Color.TRANSPARENT;
     private float startAngle, endAngle;
     private float elevation;
     private int type = 0;
-    private float radius = 0f, angle = 0f;
+    private float radius = 0f;
     private int startColor, endColor;
 
 
@@ -34,16 +35,18 @@ public class Config {
             type = attributes.getInt(R.styleable.ObliqueView_type, 0);
             startColor = attributes.getColor(R.styleable.ObliqueView_startcolor, Color.TRANSPARENT);
             endColor = attributes.getColor(R.styleable.ObliqueView_endcolor, Color.TRANSPARENT);
-            angle = attributes.getFloat(R.styleable.ObliqueView_angle, 0);
+            elevation = attributes.getFloat(R.styleable.ObliqueView_shadow, 0f);
+            int gradientangle = attributes.getInteger(R.styleable.ObliqueView_angle, 0);
+            setupAngle(gradientangle);
 
         } finally {
             attributes.recycle();
         }
     }
 
-    public float getElevation() {
+    public float getShadow() {
 
-        return elevation > 0 ? (elevation + 5) : 0;
+        return elevation > 0 ? (elevation + 10) : 0;
     }
 
     public Config setElevation(float elevation) {
@@ -69,11 +72,11 @@ public class Config {
         return this;
     }
 
-    public float getAngle() {
+    public GradientAngle getAngle() {
         return angle;
     }
 
-    public Config setAngle(@FloatRange(from = 0, to = 360) float angle) {
+    public Config setAngle(GradientAngle gradientAngle) {
         this.angle = angle;
         return this;
     }
@@ -273,19 +276,70 @@ public class Config {
         return new RadialGradient(width / 2, height / 2, radius, startColor, endColor, Shader.TileMode.CLAMP);
     }
 
-    public Shader getLinearGradient(float width, float height) {
-        float x1 = 0, y1 = 0, y2 = 0;
-        float x2 = (float) (height / Math.tan(angle));
-        if (angle <= 180) {
-            y1 = height;
-            if (angle > 90)
+    public Shader getLinearGradient(GradientAngle gradientAngle, float width, float height) {
+        float x1 = 0, x2 = 0, y1 = 0, y2 = 0;
+        switch (gradientAngle) {
+            case LEFT_TO_RIGHT:
+                x2 = width;
+                break;
+            case RIGHT_TO_LEFT:
                 x1 = width;
-        } else if (angle <= 360) {
-            y2 = height;
-            if (angle <= 270)
+                break;
+            case TOP_TO_BOTTOM:
+                y2 = height;
+                break;
+            case BOTTOM_TO_TOP:
+                y1 = height;
+                break;
+            case LEFT_TOP_TO_RIGHT_BOTTOM:
+                x2 = width;
+                y2 = height;
+                break;
+            case RIGHT_BOTTOM_TO_LEFT_TOP:
                 x1 = width;
+                x2 = height;
+                break;
+            case LEFT_BOTTOM_TO_RIGHT_TOP:
+                x2 = width;
+                y1 = height;
+                break;
+            case RIGHT_TOP_TO_LEFT_BOTTOM:
+                x1 = width;
+                y2 = height;
+                break;
         }
         return new LinearGradient(x1, y1, x2, y2, startColor, endColor, Shader.TileMode.CLAMP);
+    }
+
+    public void setupAngle(int angle) {
+        switch (angle) {
+            case 0:
+                this.angle = GradientAngle.LEFT_TO_RIGHT;
+                break;
+            case 1:
+                this.angle = GradientAngle.RIGHT_TO_LEFT;
+                break;
+            case 2:
+                this.angle = GradientAngle.TOP_TO_BOTTOM;
+                break;
+            case 3:
+                this.angle = GradientAngle.BOTTOM_TO_TOP;
+                break;
+            case 4:
+                this.angle = GradientAngle.LEFT_TOP_TO_RIGHT_BOTTOM;
+                break;
+            case 5:
+                this.angle = GradientAngle.RIGHT_TOP_TO_LEFT_BOTTOM;
+                break;
+            case 6:
+                this.angle = GradientAngle.RIGHT_BOTTOM_TO_LEFT_TOP;
+                break;
+            case 7:
+                this.angle = GradientAngle.LEFT_BOTTOM_TO_RIGHT_TOP;
+                break;
+            default:
+                this.angle = GradientAngle.LEFT_TO_RIGHT;
+        }
     }
 
     private enum Type {
