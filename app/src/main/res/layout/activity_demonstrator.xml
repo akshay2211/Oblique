@@ -47,10 +47,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/seek2"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="10dp"
+        android:layout_margin="20dp"
         android:scaleType="centerCrop"
         android:src="@drawable/pretty_1"
         app:ending_slant_angle="0"
-        app:starting_slant_angle="0" />
+        app:starting_slant_angle="0"
+        app:type="image" />
 </RelativeLayout>

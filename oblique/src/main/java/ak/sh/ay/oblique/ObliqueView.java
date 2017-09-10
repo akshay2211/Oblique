@@ -5,36 +5,48 @@ package ak.sh.ay.oblique;
  */
 
 
+import android.annotation.TargetApi;
 import android.content.Context;
-import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.BitmapShader;
 import android.graphics.Canvas;
-import android.graphics.Color;
+import android.graphics.CornerPathEffect;
 import android.graphics.Matrix;
+import android.graphics.Outline;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.Rect;
+import android.graphics.RectF;
 import android.graphics.Shader;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.os.Build;
 import android.support.annotation.FloatRange;
+import android.support.v4.view.ViewCompat;
 import android.util.AttributeSet;
+import android.util.Log;
+import android.view.View;
+import android.view.ViewOutlineProvider;
 import android.widget.ImageView;
 
 import static android.graphics.Paint.ANTI_ALIAS_FLAG;
 
-public class ObliqueView extends ImageView {
-    private final Paint colorPaint = new Paint(ANTI_ALIAS_FLAG);
-    private Paint bitmapPaint = new Paint(ANTI_ALIAS_FLAG);
+public class ObliqueView extends android.support.v7.widget.AppCompatImageView {
+
+    //Variables
+    private Path shadowpath, path;
+    private Rect rect;
+    private float width, height;
+    private Config config = null;
     private Bitmap bitmap = null;
+    private Paint paint = new Paint(ANTI_ALIAS_FLAG);
     private BitmapShader bitmapShader;
-    private Matrix shaderMatrix = new Matrix();
-    private int baseColor = Color.TRANSPARENT;
-    private float startAngle, endAngle, width, height;
-    private Config config = new Config();
+    private PorterDuffXfermode pdMode;
 
-
+    //Constructors
     public ObliqueView(Context context) {
         super(context);
         init(context, null);
@@ -50,59 +62,142 @@ public class ObliqueView extends ImageView {
         init(context, attrs);
     }
 
-    //initialise
+    //Initialisation method
     private void init(Context context, AttributeSet attrs) {
-        config = new Config();
-        TypedArray a = context.getTheme().obtainStyledAttributes(attrs, R.styleable.ObliqueView, 0, 0);
-        if (attrs != null) {
-            startAngle = a.getFloat(R.styleable.ObliqueView_starting_slant_angle, 90f);
-            endAngle = a.getFloat(R.styleable.ObliqueView_ending_slant_angle, 90f);
-            baseColor = a.getColor(R.styleable.ObliqueView_basecolor, Color.TRANSPARENT);
-            a.recycle();
-            colorPaint.setStyle(Paint.Style.FILL);
-            colorPaint.setColor(baseColor);
-            colorPaint.setAlpha(255);
-        }
+        config = new Config(context, attrs);
+        config.setElevation(ViewCompat.getElevation(this));
+        pdMode = new PorterDuffXfermode(PorterDuff.Mode.SRC_OVER);
+
     }
 
-    @Override
-    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-        width = getMeasuredWidth();
-        height = getMeasuredHeight();
-        setupBitmap(this, width, height);
+    //Getter and Setter methods
+    public float getAngle() {
+        return config.getAngle();
+    }
+
+    public void setAngle(@FloatRange(from = 0, to = 360) float angle) {
+        config.setAngle(angle);
         invalidate();
+    }
+
+
+    public int getStartColor() {
+        return config.getStartColor();
+    }
+
+    public void setStartColor(int startColor) {
+        config.setStartColor(startColor);
+        invalidate();
+    }
+
+
+    public int getEndColor() {
+        return config.getEndColor();
+    }
+
+    public void setEndColor(int endColor) {
+        config.setEndColor(endColor);
+        invalidate();
+    }
+
+
+    public float getStartAngle() {
+        return config.getStartAngle();
     }
 
     public void setStartAngle(@FloatRange(from = 0, to = 180) float startAngle) {
-        this.startAngle = startAngle;
+        config.setStartAngle(startAngle);
         invalidate();
+    }
+
+
+    public float getEndAngle() {
+        return config.getEndAngle();
     }
 
     public void setEndAngle(@FloatRange(from = 0, to = 180) float endAngle) {
-        this.endAngle = endAngle;
+        config.setEndAngle(endAngle);
         invalidate();
+    }
+
+
+    public float getCornerRadius() {
+        return config.getRadius();
+    }
+
+    public void setCornerRadius(@FloatRange(from = 0, to = 60) float radius) {
+        config.setRadius(radius <= 60 ? radius : 60);
+        invalidate();
+    }
+
+
+    public int getBaseColor() {
+        return config.getBaseColor();
     }
 
     public void setBaseColor(int baseColor) {
-        this.baseColor = baseColor;
-        colorPaint.setColor(baseColor);
-        colorPaint.setAlpha(255);
+        config.setBaseColor(baseColor);
         invalidate();
     }
 
-    @Override
-    protected void onDraw(Canvas canvas) {
-        //  super.onDraw(canvas);
-        Path path = config.getPath(height, width, startAngle, endAngle);
-        if (bitmap != null) {
-            canvas.drawPath(path, bitmapPaint);
+
+    //Private functionality methods
+    private void setupBitmap(ImageView imageView, float width, float height) {
+        Drawable drawable = imageView.getDrawable();
+        if (drawable == null) {
+            return;
         }
-        if (baseColor != Color.TRANSPARENT) {
-            canvas.drawPath(path, colorPaint);
+        try {
+            bitmap = (drawable instanceof BitmapDrawable) ?
+                    ((BitmapDrawable) drawable).getBitmap() :
+                    Bitmap.createBitmap(drawable.getIntrinsicWidth(),
+                            drawable.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+        if (bitmap == null) {
+            imageView.invalidate();
+            return;
+        }
+        paint = new Paint(ANTI_ALIAS_FLAG);
+        bitmapShader = new BitmapShader(bitmap, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP);
+        paint.setShader(bitmapShader);
+        if (imageView.getScaleType() != ImageView.ScaleType.CENTER_CROP && imageView.getScaleType() != ImageView.ScaleType.FIT_XY) {
+            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+        }
+        bitmapShader.setLocalMatrix(setUpScaleType(bitmap, imageView, width, height));
+        imageView.invalidate();
     }
 
+    private Matrix setUpScaleType(Bitmap bitmap, ImageView iv, float width, float height) {
+        float scaleX = 1, scaleY = 1, dx = 0, dy = 0;
+        Matrix shaderMatrix = new Matrix();
+        if (bitmap == null) {
+            return null;
+        }
+        shaderMatrix.set(null);
+        if (iv.getScaleType() == ImageView.ScaleType.CENTER_CROP) {
+            if (width != bitmap.getWidth()) {
+                scaleX = width / bitmap.getWidth();
+            }
+            if (scaleX * bitmap.getHeight() < height) {
+                scaleX = height / bitmap.getHeight();
+            }
+            dy = (height - bitmap.getHeight() * scaleX) * 0.5f;
+            dx = (width - bitmap.getWidth() * scaleX) * 0.5f;
+            shaderMatrix.setScale(scaleX, scaleX);
+        } else {
+            scaleX = width / bitmap.getWidth();
+            scaleY = height / bitmap.getHeight();
+            dy = (height - bitmap.getHeight() * scaleY) * 0.5f;
+            dx = (width - bitmap.getWidth() * scaleX) * 0.5f;
+            shaderMatrix.setScale(scaleX, scaleY);
+        }
+        shaderMatrix.postTranslate(dx + 0.5f, dy + 0.5f);
+        return shaderMatrix;
+    }
+
+    //Overriden Methods
     @Override
     public void setImageResource(int resId) {
         super.setImageResource(resId);
@@ -142,60 +237,68 @@ public class ObliqueView extends ImageView {
         }
     }
 
-    public void setupBitmap(ImageView imageView, float width, float height) {
-        Drawable drawable = imageView.getDrawable();
-        if (drawable == null) {
-            return;
-        }
-        try {
-
-            bitmap = (drawable instanceof BitmapDrawable) ?
-                    ((BitmapDrawable) drawable).getBitmap()
-                    :
-                    Bitmap.createBitmap(drawable.getIntrinsicWidth(),
-                            drawable.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        if (bitmap == null) {
-            imageView.invalidate();
-            return;
-        }
-        bitmapPaint = new Paint(ANTI_ALIAS_FLAG);
-        bitmapShader = new BitmapShader(bitmap, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP);
-        bitmapPaint.setShader(bitmapShader);
-        if (imageView.getScaleType() != ImageView.ScaleType.CENTER_CROP && imageView.getScaleType() != ImageView.ScaleType.FIT_XY)
-            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        setUpScaleType(imageView, width, height);
-        imageView.invalidate();
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        width = getMeasuredWidth();
+        height = getMeasuredHeight();
+        path = config.getPath(height, width);
+        invalidate();
     }
 
-
-    private void setUpScaleType(ImageView iv, float width, float height) {
-        float scaleX = 1, scaleY = 1, dx = 0, dy = 0;
-        if (bitmap == null || shaderMatrix == null)
-            return;
-        shaderMatrix.set(null);
-        if (iv.getScaleType() == ImageView.ScaleType.CENTER_CROP) {
-            if (width != bitmap.getWidth()) {
-                scaleX = width / bitmap.getWidth();
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+    @Override
+    public ViewOutlineProvider getOutlineProvider() {
+        shadowpath = new Path();
+        rect = new Rect(0, 0, (int) width, (int) height);
+        RectF r = new RectF(rect);
+        shadowpath.addRoundRect(r, config.getRadius(), config.getRadius(), Path.Direction.CCW);
+        shadowpath.op(config.getPathShadow(width, height), shadowpath, Path.Op.INTERSECT);
+        return new ViewOutlineProvider() {
+            @Override
+            public void getOutline(View view, Outline outline) {
+                if (path.isConvex()) {
+                    outline.setConvexPath(shadowpath);
+                }
             }
-            if (scaleX * bitmap.getHeight() < height) {
-                scaleX = height / bitmap.getHeight();
-            }
-            dy = (height - bitmap.getHeight() * scaleX) * 0.5f;
-            dx = (width - bitmap.getWidth() * scaleX) * 0.5f;
-            shaderMatrix.setScale(scaleX, scaleX);
-        } else {
-            scaleX = width / bitmap.getWidth();
-            scaleY = height / bitmap.getHeight();
-            dy = (height - bitmap.getHeight() * scaleY) * 0.5f;
-            dx = (width - bitmap.getWidth() * scaleX) * 0.5f;
-            shaderMatrix.setScale(scaleX, scaleY);
-        }
-        shaderMatrix.postTranslate(dx + 0.5f, dy + 0.5f);
-        bitmapShader.setLocalMatrix(shaderMatrix);
+        };
     }
 
+    @Override
+    protected void onDraw(Canvas canvas) {
+        //  super.onDraw(canvas);
 
+        paint.setStyle(Paint.Style.FILL);
+        switch (config.getType()) {
+            case 0:
+                paint.setColor(config.getBaseColor());
+                break;
+            case 1:
+                paint.setShader(config.getLinearGradient(width, height));
+                break;
+            case 2:
+                paint.setShader(config.getRadialGradient(width, height));
+                break;
+            case 3:
+                setupBitmap(this, width, height);
+                break;
+        }
+        if (config.getRadius() != 0f) {
+            paint.setStrokeJoin(Paint.Join.ROUND);    // set the join to round you want
+            paint.setStrokeCap(Paint.Cap.ROUND);      // set the paint cap to round too
+            paint.setPathEffect(new CornerPathEffect(config.getRadius()));
+        }
+        ViewCompat.setElevation(this, config.getElevation());
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP && ViewCompat.getElevation(this) > 0f) {
+
+            try {
+                setOutlineProvider(getOutlineProvider());
+            } catch (Exception e) {
+                Log.e("Exception", e.getMessage());
+                e.printStackTrace();
+            }
+        }
+        paint.setXfermode(pdMode);
+        canvas.drawPath(path, paint);
+    }
 }

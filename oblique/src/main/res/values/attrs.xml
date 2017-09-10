@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="ObliqueView">
-        <attr name="scaleType">
-            <enum name="centerCrop" value="0" />
-            <enum name="fitXY" value="1" />
+        <attr name="type">
+            <enum name="solid_color" value="0" />
+            <enum name="linear_gradient" value="1" />
+            <enum name="radial_gradient" value="2" />
+            <enum name="image" value="3" />
         </attr>
         <attr name="starting_slant_angle" format="float" />
         <attr name="ending_slant_angle" format="float" />
         <attr name="basecolor" format="color" />
+        <attr name="startcolor" format="color" />
+        <attr name="endcolor" format="color" />
+        <attr name="angle" format="float" />
+        <attr name="radius" format="reference" />
+        <attr name="gradient" format="boolean" />
         <attr name="src" format="reference" />
     </declare-styleable>
 </resources>
