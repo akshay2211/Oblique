@@ -1,71 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorGrey">
+    android:background="@color/colorGrey"
+    android:orientation="vertical">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <ak.sh.ay.oblique.ObliqueView
-            android:id="@+id/obliqueView1"
-            android:layout_width="match_parent"
-            android:layout_height="500dp"
-            android:layout_alignParentBottom="true"
-            android:layout_marginTop="150dp"
-            android:scaleType="centerCrop"
-            app:basecolor="#D4145A"
-            app:ending_slant_angle="40"
-            app:starting_slant_angle="0" />
-
-        <ak.sh.ay.oblique.ObliqueView
-            android:id="@+id/obliqueView2"
-            android:layout_width="match_parent"
-            android:layout_height="400dp"
-            android:layout_alignParentBottom="true"
-            android:layout_marginTop="250dp"
-            android:scaleType="fitXY"
-            app:basecolor="#FBB03B"
-            app:ending_slant_angle="180"
-            app:starting_slant_angle="150" />
-
-        <ak.sh.ay.oblique.ObliqueView
-            android:id="@+id/obliqueView4"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_alignParentBottom="true"
-            android:scaleType="fitXY"
-            app:basecolor="#009245"
-            app:ending_slant_angle="180"
-            app:starting_slant_angle="140" />
-
-        <ak.sh.ay.oblique.ObliqueView
-            android:id="@+id/obliqueView3"
-            android:layout_width="match_parent"
-            android:layout_height="160dp"
-            android:layout_alignParentBottom="true"
-            android:scaleType="fitXY"
-            app:basecolor="#00537E"
-            app:ending_slant_angle="25"
-            app:starting_slant_angle="0" />
-    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="125dp"
-            android:gravity="left"
-            android:padding="25dp"
-            android:text="A slanted edged\nImageview Library"
-            android:textColor="#fff"
-            android:textSize="26sp" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
 
         <TextView
             android:id="@+id/sample"
@@ -93,33 +40,247 @@
             android:textSize="28sp" />
     </LinearLayout>
 
-
-    <ak.sh.ay.oblique.ObliqueView
-        android:id="@+id/obliqueView"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:scaleType="centerCrop"
-        app:angle="LEFT_BOTTOM_TO_RIGHT_TOP"
-        app:basecolor="#2E3192"
-        app:endcolor="#1BFFFF"
-        app:ending_slant_angle="0"
-        app:radius="15"
-        app:shadow="10"
-        app:startcolor="#2E3192"
-        app:starting_slant_angle="10"
-        app:type="linear_gradient" />
+        android:layout_height="200dp"
+        android:layout_marginBottom="-70dp">
 
-    <TextView
-        android:id="@+id/text_oblique"
-        fontPath="fonts/Roboto-Thin.ttf"
+        <ak.sh.ay.oblique.ObliqueView
+            android:id="@+id/obliqueView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="20dp"
+            android:scaleType="centerCrop"
+            app:angle="LEFT_BOTTOM_TO_RIGHT_TOP"
+            app:basecolor="#2E3192"
+            app:endcolor="#FBB03B"
+            app:ending_slant_angle="0"
+            app:radius="18"
+            app:shadow="10"
+            app:startcolor="#D4145A"
+            app:starting_slant_angle="10"
+            app:type="linear_gradient" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="35dp"
+            android:elevation="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/text_oblique"
+                fontPath="fonts/Roboto-Thin.ttf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:text="Oblique"
+                android:textColor="#ffffff"
+                android:textSize="75sp" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:elevation="15dp"
-        android:paddingBottom="20dp"
-        android:paddingLeft="45dp"
-        android:text="Oblique"
-        android:textColor="#fff"
-        android:textSize="65sp" />
+        android:layout_height="match_parent"
+        android:layout_marginBottom="-30dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
 
-</FrameLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="30dp"
+            android:layout_weight="1">
+
+            <ak.sh.ay.oblique.ObliqueView
+                android:id="@+id/obliqueView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/pretty_1"
+                app:ending_slant_angle="10"
+                app:radius="18"
+                app:shadow="10"
+                app:starting_slant_angle="10"
+                app:type="image" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:elevation="10dp"
+                android:gravity="center"
+                android:rotation="-10"
+                android:text="Demo"
+                android:textColor="#fff"
+                android:textSize="26sp" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="30dp"
+            android:layout_weight="1">
+
+            <ak.sh.ay.oblique.ObliqueView
+                android:id="@+id/obliqueView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:fitsSystemWindows="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/pretty_2"
+                app:ending_slant_angle="10"
+                app:radius="18"
+                app:shadow="10"
+                app:starting_slant_angle="10"
+                app:type="image" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:elevation="10dp"
+                android:gravity="center"
+                android:rotation="-10"
+                android:text="Sample 1"
+                android:textColor="#fff"
+                android:textSize="26sp" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="-30dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="30dp"
+            android:layout_weight="1">
+
+            <ak.sh.ay.oblique.ObliqueView
+                android:id="@+id/obliqueView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/pretty_3"
+                app:ending_slant_angle="10"
+                app:radius="18"
+                app:shadow="10"
+                app:starting_slant_angle="10"
+                app:type="image" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:elevation="10dp"
+                android:gravity="center"
+                android:rotation="-10"
+                android:text="Sample 2"
+                android:textColor="#fff"
+                android:textSize="26sp" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="30dp"
+            android:layout_weight="1">
+
+            <ak.sh.ay.oblique.ObliqueView
+                android:id="@+id/obliqueView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/pretty_4"
+                app:ending_slant_angle="10"
+                app:radius="18"
+                app:shadow="10"
+                app:starting_slant_angle="10"
+                app:type="image" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:elevation="10dp"
+                android:gravity="center"
+                android:rotation="-10"
+                android:text="Sample 3"
+                android:textColor="#fff"
+                android:textSize="26sp" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_marginTop="-70dp">
+
+        <ak.sh.ay.oblique.ObliqueView
+            android:id="@+id/obliqueView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="20dp"
+            android:scaleType="centerCrop"
+            app:angle="LEFT_BOTTOM_TO_RIGHT_TOP"
+            app:basecolor="#2E3192"
+            app:endcolor="#ED1E79"
+            app:ending_slant_angle="10"
+            app:radius="18"
+            app:shadow="10"
+            app:startcolor="#662D8C"
+            app:starting_slant_angle="0"
+            app:type="linear_gradient" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="40dp"
+            android:elevation="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                fontPath="fonts/Roboto-Thin.ttf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="40dp"
+                android:gravity="right"
+                android:text="A slanted edged\nImageview Library"
+                android:textColor="#fff"
+                android:textSize="26sp" />
+
+        </LinearLayout>
+    </FrameLayout>
+
+
+</LinearLayout>
 
