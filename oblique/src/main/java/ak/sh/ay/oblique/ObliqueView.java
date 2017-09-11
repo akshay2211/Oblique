@@ -79,7 +79,6 @@ public class ObliqueView extends android.support.v7.widget.AppCompatImageView {
     }
 
     public void setShadow(float elevation) {
-        // ViewCompat.setShadow(this, elevation);
         config.setElevation(elevation);
         invalidate();
     }

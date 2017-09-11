@@ -42,5 +42,6 @@
         android:scaleType="centerCrop"
         android:src="@drawable/pretty_2"
         app:ending_slant_angle="90"
-        app:starting_slant_angle="80" />
+        app:starting_slant_angle="80"
+        app:type="image" />
 </LinearLayout>

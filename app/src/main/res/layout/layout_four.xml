@@ -8,9 +8,9 @@
     android:orientation="horizontal">
 
     <LinearLayout
-        android:layout_marginRight="-60dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginRight="-60dp"
         android:layout_weight="0.40"
         android:orientation="vertical">
 
@@ -42,13 +42,14 @@
         android:scaleType="centerCrop"
         android:src="@drawable/pretty_4"
         app:ending_slant_angle="65"
-        app:starting_slant_angle="65" />
+        app:starting_slant_angle="65"
+        app:type="image" />
 
     <LinearLayout
-        android:layout_marginTop="110dp"
-        android:layout_marginLeft="-60dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="-60dp"
+        android:layout_marginTop="110dp"
         android:layout_weight="0.40"
         android:orientation="vertical">
 
