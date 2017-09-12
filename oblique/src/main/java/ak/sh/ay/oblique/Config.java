@@ -16,7 +16,7 @@ import android.util.Log;
  */
 
 public class Config {
-    GradientAngle angle = GradientAngle.LEFT_TO_RIGHT;
+    private GradientAngle angle = GradientAngle.LEFT_TO_RIGHT;
     private int baseColor = Color.TRANSPARENT;
     private float startAngle, endAngle;
     private float elevation;
@@ -77,7 +77,7 @@ public class Config {
     }
 
     public Config setAngle(GradientAngle gradientAngle) {
-        this.angle = angle;
+        this.angle = gradientAngle;
         return this;
     }
 
@@ -340,10 +340,6 @@ public class Config {
             default:
                 this.angle = GradientAngle.LEFT_TO_RIGHT;
         }
-    }
-
-    private enum Type {
-        IMAGE, LINEAR_GRADIENT, RADIAL_GRADIENT, SOLID_COLOR
     }
 
 

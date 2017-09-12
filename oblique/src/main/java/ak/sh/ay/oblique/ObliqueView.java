@@ -142,6 +142,15 @@ public class ObliqueView extends android.support.v7.widget.AppCompatImageView {
         invalidate();
     }
 
+    public int getType() {
+        return config.getBaseColor();
+    }
+
+    public void setType(Type type) {
+        config.setType(type);
+        invalidate();
+    }
+
 
     //Private functionality methods
     private void setupBitmap(ImageView imageView, float width, float height) {
