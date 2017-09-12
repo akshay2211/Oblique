@@ -1,19 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_demonstrator"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorGrey"
+    android:background="@color/colorPrimaryDark"
+    android:orientation="vertical"
     tools:context="ak.sh.ay.app.DemonstratorActivity">
+
+    <ak.sh.ay.oblique.ObliqueView
+        android:id="@+id/obliqueView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/check"
+        android:layout_margin="20dp"
+        android:layout_weight="1"
+        android:scaleType="centerCrop"
+        android:src="@drawable/pretty_1"
+        app:ending_slant_angle="0"
+        app:starting_slant_angle="0"
+        app:type="image" />
 
     <TextView
         android:id="@+id/txt1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="12dp"
         android:padding="5dp"
         android:text="Starting side Slanting angle"
         android:textSize="16sp" />
@@ -22,14 +35,14 @@
         android:id="@+id/seek1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/txt1"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:padding="5sp" />
 
     <TextView
         android:id="@+id/txt2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/seek1"
         android:layout_marginLeft="20dp"
         android:padding="5dp"
         android:text="Ending side Slanting angle"
@@ -39,19 +52,31 @@
         android:id="@+id/seek2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/txt2"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:padding="5dp" />
 
-    <ak.sh.ay.oblique.ObliqueView
-        android:id="@+id/obliqueView"
+    <LinearLayout
+        android:id="@+id/check"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/seek2"
+        android:layout_height="30dp"
         android:layout_margin="20dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/pretty_1"
-        app:ending_slant_angle="0"
-        app:shadow="10"
-        app:starting_slant_angle="0"
-        app:type="image" />
-</RelativeLayout>
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/radius"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Radius" />
+
+        <CheckBox
+            android:id="@+id/shadow"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Shadow" />
+    </LinearLayout>
+</LinearLayout>

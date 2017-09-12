@@ -19,6 +19,7 @@ public class ListSampleActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Utils.hideStatusbar(this);
         setContentView(R.layout.activity_list_sample);
         ButterKnife.bind(this);
         sampleAdapter = new SampleAdapter(this);
@@ -31,5 +32,11 @@ public class ListSampleActivity extends AppCompatActivity {
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Utils.hideStatusbar(this);
     }
 }

@@ -3,6 +3,8 @@ package ak.sh.ay.app;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatSeekBar;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -19,12 +21,18 @@ public class DemonstratorActivity extends AppCompatActivity {
     TextView txt1;
     @BindView(R.id.txt2)
     TextView txt2;
+    @BindView(R.id.radius)
+    CheckBox radius;
+    @BindView(R.id.shadow)
+    CheckBox shadow;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Utils.hideStatusbar(this);
         setContentView(R.layout.activity_demonstrator);
         ButterKnife.bind(this);
+
         final ObliqueView obliqueView = (ObliqueView) findViewById(R.id.obliqueView);
         seek1.setMax(180);
         seek1.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -62,5 +70,25 @@ public class DemonstratorActivity extends AppCompatActivity {
 
             }
         });
+
+        shadow.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                obliqueView.setShadow(isChecked ? 10 : 0);
+            }
+        });
+
+        radius.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                obliqueView.setCornerRadius(isChecked ? 20 : 0);
+            }
+        });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Utils.hideStatusbar(this);
     }
 }
