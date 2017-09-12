@@ -5,7 +5,7 @@ android {
     buildToolsVersion "25.0.2"
     defaultConfig {
         applicationId "ak.sh.ay.app"
-        minSdkVersion 9
+        minSdkVersion 13
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -25,11 +25,12 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile project(':oblique')
+
     compile 'com.android.support:appcompat-v7:25.3.0'
     compile 'com.android.support:recyclerview-v7:25.3.0'
     compile 'com.jakewharton:butterknife:8.5.1'
     compile 'uk.co.chrisjenx:calligraphy:2.2.0'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+    compile 'com.android.support:design:25.3.1'
     testCompile 'junit:junit:4.12'
-
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
 }
