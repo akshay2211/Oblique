@@ -4,41 +4,8 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorGrey"
+    android:background="@color/colorPrimaryDark"
     android:orientation="vertical">
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:visibility="gone">
-
-        <TextView
-            android:id="@+id/sample"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:drawableTop="@drawable/ic_style_black_24dp"
-            android:gravity="right"
-            android:paddingRight="25dp"
-            android:text="Sample  "
-            android:textColor="#fff"
-            android:textSize="28sp" />
-
-        <TextView
-            android:id="@+id/demonstrator"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:layout_marginLeft="20dp"
-            android:drawableTop="@drawable/ic_gesture_black_24dp"
-            android:gravity="center"
-            android:padding="15dp"
-            android:text="Oblique\nDemonstrator"
-            android:textColor="#fff"
-            android:textSize="28sp" />
-    </LinearLayout>
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -89,13 +56,14 @@
         android:orientation="horizontal">
 
         <FrameLayout
+            android:id="@+id/demonstrator"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="30dp"
             android:layout_weight="1">
 
             <ak.sh.ay.oblique.ObliqueView
-                android:id="@+id/obliqueView"
+                android:id="@+id/ov_demo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="10dp"
@@ -124,13 +92,14 @@
         </FrameLayout>
 
         <FrameLayout
+            android:id="@+id/sample"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginBottom="30dp"
             android:layout_weight="1">
 
             <ak.sh.ay.oblique.ObliqueView
-                android:id="@+id/obliqueView"
+                android:id="@+id/ov_sample1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="10dp"
@@ -168,13 +137,14 @@
         android:orientation="horizontal">
 
         <FrameLayout
+            android:id="@+id/sample2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="30dp"
             android:layout_weight="1">
 
             <ak.sh.ay.oblique.ObliqueView
-                android:id="@+id/obliqueView"
+                android:id="@+id/ov_sample2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="10dp"
@@ -203,13 +173,14 @@
         </FrameLayout>
 
         <FrameLayout
+            android:id="@+id/sample3"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginBottom="30dp"
             android:layout_weight="1">
 
             <ak.sh.ay.oblique.ObliqueView
-                android:id="@+id/obliqueView"
+                android:id="@+id/ov_sample3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="10dp"

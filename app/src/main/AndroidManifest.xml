@@ -21,7 +21,11 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".DemonstratorActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Sample2Activity"
+            android:label="@string/title_activity_sample2"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>
