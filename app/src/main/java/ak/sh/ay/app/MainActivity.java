@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
     @OnClick(R.id.sample2)
     public void sample2(View v) {
         ov_demo.setShadow(0);
-        startActivity(new Intent(MainActivity.this, Sample2Activity.class));
+        startActivity(new Intent(MainActivity.this, SampleTwoActivity.class));
     }
 
     @OnClick(R.id.sample)
