@@ -56,13 +56,13 @@ public class PlaceholderFragment extends Fragment {
                 setup_2(obliqueView);
                 break;
             case 3:
-                setup_1(obliqueView);
+                setup_3(obliqueView);
                 break;
             case 4:
-                setup_2(obliqueView);
+                setup_4(obliqueView);
                 break;
             case 5:
-                setup_1(obliqueView);
+                setup_5(obliqueView);
                 break;
             default:
 
@@ -89,5 +89,35 @@ public class PlaceholderFragment extends Fragment {
         obliqueView.setCornerRadius(15);
         obliqueView.setShadow(10);
         obliqueView.setImageResource(R.drawable.pretty_1);
+    }
+
+    private void setup_3(ObliqueView obliqueView) {
+        obliqueView.setType(Type.RADIAL_GRADIENT);
+        obliqueView.setEndColor(Color.parseColor("#662D8C"));
+        obliqueView.setStartColor(Color.parseColor("#ED1E79"));
+        obliqueView.setEndAngle(85);
+        obliqueView.setStartAngle(85);
+        obliqueView.setCornerRadius(15);
+        obliqueView.setShadow(10);
+    }
+
+    private void setup_4(ObliqueView obliqueView) {
+        obliqueView.setType(Type.IMAGE);
+        obliqueView.setEndAngle(99);
+        obliqueView.setStartAngle(99);
+        obliqueView.setCornerRadius(15);
+        obliqueView.setShadow(10);
+        obliqueView.setImageResource(R.drawable.pretty_2);
+    }
+
+    private void setup_5(ObliqueView obliqueView) {
+        obliqueView.setType(Type.LINEAR_GRADIENT);
+        obliqueView.setStartColor(Color.parseColor("#2E3192"));
+        obliqueView.setEndColor(Color.parseColor("#1BFFFF"));
+        obliqueView.setAngle(GradientAngle.RIGHT_BOTTOM_TO_LEFT_TOP);
+        obliqueView.setEndAngle(180);
+        obliqueView.setStartAngle(170);
+        obliqueView.setCornerRadius(15);
+        obliqueView.setShadow(10);
     }
 }

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="ak.sh.ay.app.SampleTwoActivity$PlaceholderFragment">
+    tools:context="ak.sh.ay.app.PlaceholderFragment">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -29,10 +29,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="40dp"
-            android:layout_marginTop="35dp"
+            android:layout_marginTop="85dp"
             android:elevation="10dp"
             android:orientation="vertical">
-
             <TextView
                 android:id="@+id/text_oblique"
                 fontPath="fonts/Roboto-Thin.ttf"
