@@ -17,6 +17,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    lintOptions {
+        abortOnError false
+    }
+
 }
 
 dependencies {
@@ -31,6 +35,7 @@ dependencies {
     compile 'com.jakewharton:butterknife:8.5.1'
     compile 'uk.co.chrisjenx:calligraphy:2.2.0'
     compile 'com.android.support:design:25.3.1'
+    compile 'me.relex:circleindicator:1.2.2@aar'
     testCompile 'junit:junit:4.12'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
 }

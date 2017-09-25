@@ -6,6 +6,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 
 import ak.sh.ay.app.adapters.SectionsPagerAdapter;
+import me.relex.circleindicator.CircleIndicator;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class SampleTwoActivity extends AppCompatActivity {
@@ -21,8 +22,11 @@ public class SampleTwoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sample2);
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
         mViewPager = (ViewPager) findViewById(R.id.container);
+        CircleIndicator indicator = (CircleIndicator) findViewById(R.id.indicator);
         mViewPager.setAdapter(mSectionsPagerAdapter);
+        indicator.setViewPager(mViewPager);
     }
+
 
     @Override
     protected void attachBaseContext(Context newBase) {

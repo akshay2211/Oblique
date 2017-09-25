@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="ak.sh.ay.app.PlaceholderFragment">
 
     <FrameLayout
@@ -13,7 +14,9 @@
             android:id="@+id/obliqueView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="11dp"
+            android:layout_marginLeft="11dp"
+            android:layout_marginRight="11dp"
+            android:layout_marginTop="11dp"
             android:scaleType="centerCrop"
             app:angle="LEFT_BOTTOM_TO_RIGHT_TOP"
             app:basecolor="#2E3192"
@@ -25,23 +28,31 @@
             app:starting_slant_angle="10"
             app:type="linear_gradient" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="85dp"
-            android:elevation="10dp"
-            android:orientation="vertical">
-            <TextView
-                android:id="@+id/text_oblique"
-                fontPath="fonts/Roboto-Thin.ttf"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingBottom="10dp"
-                android:text="Oblique"
-                android:textColor="#ffffff"
-                android:textSize="75sp" />
-        </LinearLayout>
+        <TextView
+            android:id="@+id/text_oblique"
+            fontPath="fonts/Roboto-Thin.ttf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:elevation="15dp"
+            android:paddingBottom="10dp"
+            android:text="Oblique"
+            android:textColor="#ffffff"
+            android:textSize="75sp" />
     </FrameLayout>
+
+    <TextView
+        fontPath="fonts/pacifico.ttf"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:lineSpacingExtra="20dp"
+        android:text="@string/sample_text"
+        android:textColor="#fff"
+        android:textSize="30dp" />
 
 </LinearLayout>

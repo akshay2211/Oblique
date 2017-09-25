@@ -39,16 +39,21 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
         Utils.hideStatusbar(this);
     }
 
+    @OnClick(R.id.sample1)
+    public void sample1(View v) {
+        ov_demo.setShadow(0);
+        startActivity(new Intent(MainActivity.this, ListSampleActivity.class));
+    }
+
     @OnClick(R.id.sample2)
     public void sample2(View v) {
         ov_demo.setShadow(0);
         startActivity(new Intent(MainActivity.this, SampleTwoActivity.class));
     }
 
-    @OnClick(R.id.sample)
-    public void sample(View v) {
-        ov_demo.setShadow(0);
-        startActivity(new Intent(MainActivity.this, ListSampleActivity.class));
+    @OnClick(R.id.docs)
+    public void docs(View v) {
+
     }
 
     @OnClick(R.id.demonstrator)

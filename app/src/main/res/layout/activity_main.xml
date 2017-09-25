@@ -92,7 +92,7 @@
         </FrameLayout>
 
         <FrameLayout
-            android:id="@+id/sample"
+            android:id="@+id/docs"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginBottom="30dp"
@@ -123,7 +123,7 @@
                 android:elevation="10dp"
                 android:gravity="center"
                 android:rotation="-10"
-                android:text="Sample 1"
+                android:text="Docs"
                 android:textColor="#fff"
                 android:textSize="26sp" />
         </FrameLayout>
@@ -137,7 +137,7 @@
         android:orientation="horizontal">
 
         <FrameLayout
-            android:id="@+id/sample2"
+            android:id="@+id/sample1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="30dp"
@@ -167,13 +167,13 @@
                 android:elevation="10dp"
                 android:gravity="center"
                 android:rotation="-10"
-                android:text="Sample 2"
+                android:text="Sample 1"
                 android:textColor="#fff"
                 android:textSize="26sp" />
         </FrameLayout>
 
         <FrameLayout
-            android:id="@+id/sample3"
+            android:id="@+id/sample2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginBottom="30dp"
@@ -203,7 +203,7 @@
                 android:elevation="10dp"
                 android:gravity="center"
                 android:rotation="-10"
-                android:text="Sample 3"
+                android:text="Sample 2"
                 android:textColor="#fff"
                 android:textSize="26sp" />
         </FrameLayout>
