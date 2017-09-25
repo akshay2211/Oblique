@@ -297,7 +297,7 @@ public class Config {
                 break;
             case RIGHT_BOTTOM_TO_LEFT_TOP:
                 x1 = width;
-                x2 = height;
+                y1 = height;
                 break;
             case LEFT_BOTTOM_TO_RIGHT_TOP:
                 x2 = width;
