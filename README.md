@@ -28,6 +28,8 @@ include namespace
 ```xml
         xmlns:app="http://schemas.android.com/apk/res-auto"
 ```
+
+ObliqueView xml representation
 ```xml
         <ak.sh.ay.oblique.ObliqueView
                     android:id="@+id/obliqueView"
@@ -46,14 +48,14 @@ include namespace
                     app:starting_slant_angle="10"
                     app:type="linear_gradient" />
 ```
-Change your Style by changing oblique type
 
-```xml
- app:type="**image**" 
- app:type="**solid_color**" 
- app:type="**linear_gradient**" 
- app:type="**radial_gradient**" 
- app:type="**image**" 
+Change your Style by changing oblique type
+```groovy
+ app:type="image" 
+ app:type="solid_color" 
+ app:type="linear_gradient" 
+ app:type="radial_gradient" 
+ app:type="image" 
  
 ```
 
@@ -63,7 +65,7 @@ obliqueView.setStartAngle(20);
 obliqueView.setEndAngle(20);
 ```
 set image or add solid color
-```java
+```groovy
  obliqueView.setBaseColor(R.color.colorAccent);
 ```
 
