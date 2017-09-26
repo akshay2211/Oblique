@@ -12,13 +12,14 @@ With Oblique explore new styles of displaying images
 
 Demo
 ----
-
-![](media/media_1.gif)
-![](media/media_2.gif)
 ![](media/one.png)
 ![](media/two.png)
 ![](media/three.png)
 ![](media/four.png)
+
+![](media/media_1.gif)
+![](media/media_2.gif)
+
 
 
 Usage
