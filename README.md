@@ -24,21 +24,37 @@ Demo
 
 Usage
 -----
-
+include namespace
 ```xml
- <ak.sh.ay.oblique.ObliqueView
-        android:id="@+id/obliqueView"
-        android:layout_width="match_parent"
-        android:layout_height="160dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/img"
-        app:ending_slant_angle="20"
-        app:starting_slant_angle="20" />
+        xmlns:app="http://schemas.android.com/apk/res-auto"
 ```
-you can also add solid color by adding
+```xml
+        <ak.sh.ay.oblique.ObliqueView
+                    android:id="@+id/obliqueView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="20dp"
+                    android:scaleType="centerCrop"
+                    app:angle="LEFT_BOTTOM_TO_RIGHT_TOP"
+                    android:src="@drawable/img"
+                    app:basecolor="#2E3192"
+                    app:startcolor="#D4145A"
+                    app:endcolor="#FBB03B"
+                    app:radius="18"
+                    app:shadow="10"
+                    app:ending_slant_angle="0"
+                    app:starting_slant_angle="10"
+                    app:type="linear_gradient" />
+```
+Change your Style by changing oblique type
 
 ```xml
- app:basecolor="#D4145A"
+ app:type="**image**" 
+ app:type="**solid_color**" 
+ app:type="**linear_gradient**" 
+ app:type="**radial_gradient**" 
+ app:type="**image**" 
+ 
 ```
 
 or can do all that by java
@@ -56,20 +72,20 @@ Download
 
  [ ![Download](https://api.bintray.com/packages/fxn769/android_projects/Oblique/images/download.svg) ](https://bintray.com/fxn769/android_projects/Oblique/_latestVersion)  or grab via Gradle:
 ```groovy
-compile 'com.fxn769:oblique:1.0'
+compile 'com.fxn769:oblique:2.0'
 ```
 or Maven:
 ```xml
 <dependency>
   <groupId>com.fxn769</groupId>
   <artifactId>oblique</artifactId>
-  <version>1.0</version>
+  <version>2.0</version>
   <type>pom</type>
 </dependency>
 ```
 or ivy:
 ```xml
-<dependency org='com.fxn769' name='oblique' rev='1.0'>
+<dependency org='com.fxn769' name='oblique' rev='2.0'>
   <artifact name='oblique' ext='pom' ></artifact>
 </dependency>
 ```
