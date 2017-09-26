@@ -1,5 +1,4 @@
-Oblique (Project under development)
-=======
+#Oblique
 
 With Oblique explore new styles of displaying images
 
