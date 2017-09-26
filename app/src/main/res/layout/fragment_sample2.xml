@@ -8,12 +8,13 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="300dp">
+        android:layout_height="280dp">
 
         <ak.sh.ay.oblique.ObliqueView
             android:id="@+id/obliqueView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginBottom="11dp"
             android:layout_marginLeft="11dp"
             android:layout_marginRight="11dp"
             android:layout_marginTop="11dp"
@@ -45,7 +46,7 @@
         fontPath="fonts/pacifico.ttf"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="60dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_weight="1"

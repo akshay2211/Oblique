@@ -93,8 +93,8 @@ public class PlaceholderFragment extends Fragment {
 
     private void setup_3(ObliqueView obliqueView) {
         obliqueView.setType(Type.RADIAL_GRADIENT);
-        obliqueView.setEndColor(Color.parseColor("#662D8C"));
-        obliqueView.setStartColor(Color.parseColor("#ED1E79"));
+        obliqueView.setEndColor(Color.parseColor("#00537E"));
+        obliqueView.setStartColor(Color.parseColor("#3AA17E"));
         obliqueView.setEndAngle(85);
         obliqueView.setStartAngle(85);
         obliqueView.setCornerRadius(15);
@@ -107,7 +107,7 @@ public class PlaceholderFragment extends Fragment {
         obliqueView.setStartAngle(99);
         obliqueView.setCornerRadius(15);
         obliqueView.setShadow(10);
-        obliqueView.setImageResource(R.drawable.pretty_2);
+        obliqueView.setImageResource(R.drawable.pretty_3);
     }
 
     private void setup_5(ObliqueView obliqueView) {

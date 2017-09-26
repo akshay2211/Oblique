@@ -92,7 +92,7 @@
         </FrameLayout>
 
         <FrameLayout
-            android:id="@+id/docs"
+            android:id="@+id/sample"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginBottom="30dp"
@@ -123,7 +123,7 @@
                 android:elevation="10dp"
                 android:gravity="center"
                 android:rotation="-10"
-                android:text="Docs"
+                android:text="Sample1"
                 android:textColor="#fff"
                 android:textSize="26sp" />
         </FrameLayout>
@@ -167,7 +167,7 @@
                 android:elevation="10dp"
                 android:gravity="center"
                 android:rotation="-10"
-                android:text="Sample 1"
+                android:text="Sample 2"
                 android:textColor="#fff"
                 android:textSize="26sp" />
         </FrameLayout>
@@ -203,7 +203,7 @@
                 android:elevation="10dp"
                 android:gravity="center"
                 android:rotation="-10"
-                android:text="Sample 2"
+                android:text="Sample 3"
                 android:textColor="#fff"
                 android:textSize="26sp" />
         </FrameLayout>
