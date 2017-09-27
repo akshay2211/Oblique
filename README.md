@@ -25,12 +25,12 @@ Demo
 Usage
 -----
 include namespace
-```xml
+```groovy
         xmlns:app="http://schemas.android.com/apk/res-auto"
 ```
 
 ObliqueView xml representation
-```xml
+```groovy
         <ak.sh.ay.oblique.ObliqueView
                     android:id="@+id/obliqueView"
                     android:layout_width="match_parent"
@@ -61,12 +61,20 @@ Change your Style by changing oblique type
 
 or can do all that by java
 ```groovy
-obliqueView.setStartAngle(20);
-obliqueView.setEndAngle(20);
+        obliqueView.setType(Type.LINEAR_GRADIENT);
+        obliqueView.setStartColor(Color.parseColor("#D4145A"));
+        obliqueView.setEndColor(Color.parseColor("#FBB03B"));
+        obliqueView.setAngle(GradientAngle.LEFT_BOTTOM_TO_RIGHT_TOP);
+        obliqueView.setStartAngle(12);
+        obliqueView.setEndAngle(0);
+        obliqueView.setCornerRadius(15);
+        obliqueView.setShadow(10);
 ```
-set image or add solid color
+set multiple types in java among these
 ```groovy
- obliqueView.setBaseColor(R.color.colorAccent);
+     obliqueView.setType(Type.LINEAR_GRADIENT);
+     
+ IMAGE, LINEAR_GRADIENT, RADIAL_GRADIENT, SOLID_COLOR
 ```
 
 Download
