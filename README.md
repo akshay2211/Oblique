@@ -32,30 +32,30 @@ include namespace
 ObliqueView xml representation
 ```groovy
         <ak.sh.ay.oblique.ObliqueView
-                    android:id="@+id/obliqueView"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="20dp"
-                    android:scaleType="centerCrop"
-                    app:angle="LEFT_BOTTOM_TO_RIGHT_TOP"
-                    android:src="@drawable/img"
-                    app:basecolor="#2E3192"
-                    app:startcolor="#D4145A"
-                    app:endcolor="#FBB03B"
-                    app:radius="18"
-                    app:shadow="10"
-                    app:ending_slant_angle="0"
-                    app:starting_slant_angle="10"
-                    app:type="linear_gradient" />
+        android:id="@+id/obliqueView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        android:scaleType="centerCrop"
+        app:angle="LEFT_BOTTOM_TO_RIGHT_TOP"
+        android:src="@drawable/img"
+        app:basecolor="#2E3192"
+        app:startcolor="#D4145A"
+        app:endcolor="#FBB03B"
+        app:radius="18"
+        app:shadow="10"
+        app:ending_slant_angle="0"
+        app:starting_slant_angle="10"
+        app:type="linear_gradient" />
 ```
 
 Change your Style by changing oblique type
 ```groovy
- app:type="image" 
- app:type="solid_color" 
- app:type="linear_gradient" 
- app:type="radial_gradient" 
- app:type="image" 
+         app:type="image" 
+         app:type="solid_color" 
+         app:type="linear_gradient" 
+         app:type="radial_gradient" 
+         app:type="image" 
  
 ```
 
@@ -72,36 +72,36 @@ or can do all that by java
 ```
 set multiple types in java among these
 ```groovy
-     obliqueView.setType(Type.LINEAR_GRADIENT);
+        obliqueView.setType(Type.LINEAR_GRADIENT);
      
- IMAGE, LINEAR_GRADIENT, RADIAL_GRADIENT, SOLID_COLOR
+        IMAGE, LINEAR_GRADIENT, RADIAL_GRADIENT, SOLID_COLOR
 ```
 add radius and elevation by 
 ```groovy
-   obliqueView.setCornerRadius(15);
-   obliqueView.setShadow(10);
+        obliqueView.setCornerRadius(15);
+        obliqueView.setShadow(10);
 ```
 Download
 --------
 
  [ ![Download](https://api.bintray.com/packages/fxn769/android_projects/Oblique/images/download.svg) ](https://bintray.com/fxn769/android_projects/Oblique/_latestVersion)  or grab via Gradle:
 ```groovy
-compile 'com.fxn769:oblique:2.0'
+        compile 'com.fxn769:oblique:2.0'
 ```
 or Maven:
 ```xml
-<dependency>
-  <groupId>com.fxn769</groupId>
-  <artifactId>oblique</artifactId>
-  <version>2.0</version>
-  <type>pom</type>
-</dependency>
+        <dependency>
+          <groupId>com.fxn769</groupId>
+          <artifactId>oblique</artifactId>
+          <version>2.0</version>
+          <type>pom</type>
+        </dependency>
 ```
 or ivy:
 ```xml
-<dependency org='com.fxn769' name='oblique' rev='2.0'>
-  <artifact name='oblique' ext='pom' ></artifact>
-</dependency>
+        <dependency org='com.fxn769' name='oblique' rev='2.0'>
+          <artifact name='oblique' ext='pom' ></artifact>
+        </dependency>
 ```
 
 Snapshots of the development version are available in [Sonatype's `snapshots` repository][snap].
