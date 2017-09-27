@@ -76,7 +76,11 @@ set multiple types in java among these
      
  IMAGE, LINEAR_GRADIENT, RADIAL_GRADIENT, SOLID_COLOR
 ```
-
+add radius and elevation by 
+```groovy
+   obliqueView.setCornerRadius(15);
+   obliqueView.setShadow(10);
+```
 Download
 --------
 
