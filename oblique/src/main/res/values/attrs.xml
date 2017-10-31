@@ -23,7 +23,7 @@
         <attr name="startcolor" format="color" />
         <attr name="endcolor" format="color" />
         <attr name="radius" format="integer" />
-        <attr name="shadow" format="float" />
+        <attr name="shadow_height" format="float" />
         <attr name="gradient" format="boolean" />
         <attr name="src" format="reference" />
     </declare-styleable>

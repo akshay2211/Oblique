@@ -35,7 +35,7 @@ public class Config {
             type = attributes.getInt(R.styleable.ObliqueView_type, 0);
             startColor = attributes.getColor(R.styleable.ObliqueView_startcolor, Color.TRANSPARENT);
             endColor = attributes.getColor(R.styleable.ObliqueView_endcolor, Color.TRANSPARENT);
-            elevation = attributes.getFloat(R.styleable.ObliqueView_shadow, 0f);
+            elevation = attributes.getFloat(R.styleable.ObliqueView_shadow_height, 0f);
             int gradientangle = attributes.getInteger(R.styleable.ObliqueView_angle, 0);
             setupAngle(gradientangle);
 
