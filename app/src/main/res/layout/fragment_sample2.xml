@@ -24,7 +24,7 @@
             app:endcolor="#FBB03B"
             app:ending_slant_angle="0"
             app:radius="18"
-            app:shadow="10"
+            app:shadow_height="10"
             app:startcolor="#D4145A"
             app:starting_slant_angle="10"
             app:type="linear_gradient" />

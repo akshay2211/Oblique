@@ -23,7 +23,7 @@
             app:endcolor="#FBB03B"
             app:ending_slant_angle="0"
             app:radius="18"
-            app:shadow="10"
+            app:shadow_height="10"
             app:startcolor="#D4145A"
             app:starting_slant_angle="10"
             app:type="linear_gradient" />
@@ -74,7 +74,7 @@
                 android:src="@drawable/pretty_1"
                 app:ending_slant_angle="10"
                 app:radius="18"
-                app:shadow="10"
+                app:shadow_height="10"
                 app:starting_slant_angle="10"
                 app:type="image" />
 
@@ -111,7 +111,7 @@
                 android:src="@drawable/pretty_2"
                 app:ending_slant_angle="10"
                 app:radius="18"
-                app:shadow="10"
+                app:shadow_height="10"
                 app:starting_slant_angle="10"
                 app:type="image" />
 
@@ -155,7 +155,7 @@
                 android:src="@drawable/pretty_3"
                 app:ending_slant_angle="10"
                 app:radius="18"
-                app:shadow="10"
+                app:shadow_height="10"
                 app:starting_slant_angle="10"
                 app:type="image" />
 
@@ -191,7 +191,7 @@
                 android:src="@drawable/pretty_4"
                 app:ending_slant_angle="10"
                 app:radius="18"
-                app:shadow="10"
+                app:shadow_height="10"
                 app:starting_slant_angle="10"
                 app:type="image" />
 
@@ -224,7 +224,7 @@
             app:endcolor="#ED1E79"
             app:ending_slant_angle="10"
             app:radius="18"
-            app:shadow="10"
+            app:shadow_height="10"
             app:startcolor="#662D8C"
             app:starting_slant_angle="0"
             app:type="linear_gradient" />
