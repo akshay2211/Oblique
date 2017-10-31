@@ -43,7 +43,7 @@ ObliqueView xml representation
         app:startcolor="#D4145A"
         app:endcolor="#FBB03B"
         app:radius="18"
-        app:shadow="10"
+        app:shadow_height="10"
         app:ending_slant_angle="0"
         app:starting_slant_angle="10"
         app:type="linear_gradient" />
@@ -55,8 +55,7 @@ Change your Style by changing oblique type
          app:type="solid_color" 
          app:type="linear_gradient" 
          app:type="radial_gradient" 
-         app:type="image" 
- 
+
 ```
 
 or can do all that by java
