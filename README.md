@@ -117,7 +117,7 @@ This project was created by [Akshay Sharma](https://akshay2211.github.io/).
 
 > I love using my work and I'm available for contract work. Freelancing helps to maintain and keep [my open source projects](https://github.com/akshay2211/) up to date!
 
-<img src="http://forthebadge.com/images/badges/built-for-android.svg" />
+[![forthebadge](http://forthebadge.com/images/badges/built-for-android.svg)](http://forthebadge.com)
 
 
  [1]: https://play.google.com/store/apps/details?id=ak.sh.ay.app
