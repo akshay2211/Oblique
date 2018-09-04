@@ -14,13 +14,11 @@ With Oblique explore new styles of displaying images
 
 Demo
 ----
-![](media/one.png)
-![](media/two.png)
-![](media/three.png)
-![](media/four.png)
+<img width=25% src='media/one.png'/><img width=25% src='media/two.png'/><img width=25% src='media/three.png'/><img width=25% src='media/four.png'/>
 
-![](media/media_1.gif)
-![](media/media_2.gif)
+<img width=50% src='media/media_1.gif'/><img width=50% src='media/media_2.gif'/>
+
+
 
 
 
