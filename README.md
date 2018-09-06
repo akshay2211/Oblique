@@ -85,7 +85,7 @@ Download
 
  [ ![Download](https://api.bintray.com/packages/fxn769/android_projects/Oblique/images/download.svg) ](https://bintray.com/fxn769/android_projects/Oblique/_latestVersion)  or grab via Gradle:
 ```groovy
-        compile 'com.fxn769:oblique:2.0'
+        implementation  'com.fxn769:oblique:2.0'
 ```
 or Maven:
 ```xml
