@@ -20,22 +20,24 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled true
+           // minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
     lintOptions {
-        abortOnError false
+        abortOnError true
+    }
+}
+allprojects {
+    repositories {
+        google()
+        jcenter()
     }
 }
 
 dependencies {
-    def core_version = "1.2.0"
-
     implementation "androidx.annotation:annotation:1.1.0"
-    implementation "androidx.core:core:$core_version"
-
-
+    implementation "androidx.core:core:1.2.0"
 }
 
 apply from: 'https://raw.githubusercontent.com/blundell/release-android-library/master/android-release-aar.gradle'
