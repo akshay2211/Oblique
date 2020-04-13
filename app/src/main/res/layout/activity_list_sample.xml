@@ -5,9 +5,9 @@
     android:layout_height="match_parent"
     tools:context="ak.sh.ay.app.ListSampleActivity">
 
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycleview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#eee"></android.support.v7.widget.RecyclerView>
+        android:background="#eee"></androidx.recyclerview.widget.RecyclerView>
 </merge>

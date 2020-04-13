@@ -3,24 +3,24 @@ apply plugin: 'com.android.library'
 ext {
     PUBLISH_GROUP_ID = 'com.fxn769'
     PUBLISH_ARTIFACT_ID = 'oblique'
-    PUBLISH_VERSION = '2.1'
+    PUBLISH_VERSION = '2.2'
 }
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion '26.0.2'
+    compileSdkVersion 29
+    buildToolsVersion '29.0.3'
 
     defaultConfig {
         minSdkVersion 9
-        targetSdkVersion 25
+        targetSdkVersion 29
         versionCode 2
         versionName "1.1"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -30,12 +30,12 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    compile 'com.android.support:appcompat-v7:25.3.0'
-    testCompile 'junit:junit:4.12'
+    def core_version = "1.2.0"
+
+    implementation "androidx.annotation:annotation:1.1.0"
+    implementation "androidx.core:core:$core_version"
+
+
 }
 
 apply from: 'https://raw.githubusercontent.com/blundell/release-android-library/master/android-release-aar.gradle'

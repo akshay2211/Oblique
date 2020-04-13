@@ -31,7 +31,7 @@
         android:text="Starting side Slanting angle"
         android:textSize="16sp" />
 
-    <android.support.v7.widget.AppCompatSeekBar
+    <androidx.appcompat.widget.AppCompatSeekBar
         android:id="@+id/seek1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -48,7 +48,7 @@
         android:text="Ending side Slanting angle"
         android:textSize="16dp" />
 
-    <android.support.v7.widget.AppCompatSeekBar
+    <androidx.appcompat.widget.AppCompatSeekBar
         android:id="@+id/seek2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
