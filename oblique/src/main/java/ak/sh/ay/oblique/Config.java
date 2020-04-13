@@ -7,9 +7,10 @@ import android.graphics.LinearGradient;
 import android.graphics.Path;
 import android.graphics.RadialGradient;
 import android.graphics.Shader;
-import android.support.annotation.FloatRange;
 import android.util.AttributeSet;
 import android.util.Log;
+
+import androidx.annotation.FloatRange;
 
 /**
  * Created by akshay on 21/3/17.
