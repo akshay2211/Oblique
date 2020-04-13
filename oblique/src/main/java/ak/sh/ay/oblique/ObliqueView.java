@@ -24,17 +24,18 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
-import android.support.annotation.FloatRange;
-import android.support.v4.view.ViewCompat;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewOutlineProvider;
 import android.widget.ImageView;
 
+import androidx.annotation.FloatRange;
+import androidx.core.view.ViewCompat;
+
 import static android.graphics.Paint.ANTI_ALIAS_FLAG;
 
-public class ObliqueView extends android.support.v7.widget.AppCompatImageView {
+public class ObliqueView extends ImageView {
 
     //Variables
     private Path shadowpath, path;
@@ -65,7 +66,10 @@ public class ObliqueView extends android.support.v7.widget.AppCompatImageView {
     //Initialisation method
     private void init(Context context, AttributeSet attrs) {
         config = new Config(context, attrs);
+        paint = new Paint(ANTI_ALIAS_FLAG);
+        paint.setPathEffect(new CornerPathEffect(config.getRadius()));
         pdMode = new PorterDuffXfermode(PorterDuff.Mode.SRC_OVER);
+        //Log.e("logs","init");
     }
 
     //Getter and Setter methods
@@ -129,6 +133,7 @@ public class ObliqueView extends android.support.v7.widget.AppCompatImageView {
 
     public void setCornerRadius(@FloatRange(from = 0, to = 60) float radius) {
         config.setRadius(radius <= 60 ? radius : 60);
+        paint.setPathEffect(new CornerPathEffect(config.getRadius()));
         invalidate();
     }
 
@@ -154,6 +159,7 @@ public class ObliqueView extends android.support.v7.widget.AppCompatImageView {
 
     //Private functionality methods
     private void setupBitmap(ImageView imageView, float width, float height) {
+        //Log.e("logs","setupBitmap");
         Drawable drawable = imageView.getDrawable();
         if (drawable == null) {
             return;
@@ -167,17 +173,18 @@ public class ObliqueView extends android.support.v7.widget.AppCompatImageView {
             e.printStackTrace();
         }
         if (bitmap == null) {
-            imageView.invalidate();
+            // imageView.invalidate();
             return;
         }
-        paint = new Paint(ANTI_ALIAS_FLAG);
+
         bitmapShader = new BitmapShader(bitmap, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP);
-        paint.setShader(bitmapShader);
+        //paint.setShader(bitmapShader);
+        // paint.setPathEffect(new CornerPathEffect(config.getRadius()));
         if (imageView.getScaleType() != ImageView.ScaleType.CENTER_CROP && imageView.getScaleType() != ImageView.ScaleType.FIT_XY) {
             imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
         }
         bitmapShader.setLocalMatrix(setUpScaleType(bitmap, imageView, width, height));
-        imageView.invalidate();
+        // imageView.invalidate();
     }
 
     private Matrix setUpScaleType(Bitmap bitmap, ImageView iv, float width, float height) {
@@ -205,6 +212,7 @@ public class ObliqueView extends android.support.v7.widget.AppCompatImageView {
             shaderMatrix.setScale(scaleX, scaleY);
         }
         shaderMatrix.postTranslate(dx + 0.5f, dy + 0.5f);
+        //Log.e("logs","setUpScaleType");
         return shaderMatrix;
     }
 
@@ -251,6 +259,7 @@ public class ObliqueView extends android.support.v7.widget.AppCompatImageView {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        //Log.e("logs","onMeasure");
         width = getMeasuredWidth();
         height = getMeasuredHeight();
         path = config.getPath(height, width);
@@ -282,7 +291,7 @@ public class ObliqueView extends android.support.v7.widget.AppCompatImageView {
     @Override
     protected void onDraw(Canvas canvas) {
         //  super.onDraw(canvas);
-
+        //Log.e("logs","onDraw");
         paint.setStyle(Paint.Style.FILL);
         switch (config.getType()) {
             case 0:
@@ -296,11 +305,12 @@ public class ObliqueView extends android.support.v7.widget.AppCompatImageView {
                 break;
             case 3:
                 setupBitmap(this, width, height);
+                paint.setShader(bitmapShader);
                 break;
         }
             paint.setStrokeJoin(Paint.Join.ROUND);    // set the join to round you want
             paint.setStrokeCap(Paint.Cap.ROUND);      // set the paint cap to round too
-            paint.setPathEffect(new CornerPathEffect(config.getRadius()));
+
         ViewCompat.setElevation(this, config.getShadow());
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP && ViewCompat.getElevation(this) > 0f) {
 
