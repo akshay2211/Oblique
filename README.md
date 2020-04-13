@@ -85,20 +85,20 @@ Download
 
  [ ![Download](https://api.bintray.com/packages/fxn769/android_projects/Oblique/images/download.svg) ](https://bintray.com/fxn769/android_projects/Oblique/_latestVersion)  or grab via Gradle:
 ```groovy
-        implementation  'com.fxn769:oblique:2.0'
+        implementation  'com.fxn769:oblique:2.2'
 ```
 or Maven:
 ```xml
         <dependency>
           <groupId>com.fxn769</groupId>
           <artifactId>oblique</artifactId>
-          <version>2.0</version>
+          <version>2.2</version>
           <type>pom</type>
         </dependency>
 ```
 or ivy:
 ```xml
-        <dependency org='com.fxn769' name='oblique' rev='2.0'>
+        <dependency org='com.fxn769' name='oblique' rev='2.2'>
           <artifact name='oblique' ext='pom' ></artifact>
         </dependency>
 ```
@@ -108,7 +108,7 @@ Snapshots of the development version are available in [Sonatype's `snapshots` re
 
 
 ## License
-Licensed under the Apache License, Version 2.0, [click here for the full license](/LICENSE.txt).
+Licensed under the Apache License, Version 2.2, [click here for the full license](/LICENSE.txt).
 
 ## Author & support
 This project was created by [Akshay Sharma](https://akshay2211.github.io/).
