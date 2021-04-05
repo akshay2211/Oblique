@@ -1,10 +1,17 @@
-apply plugin: 'com.android.library'
-
-ext {
-    PUBLISH_GROUP_ID = 'com.fxn769'
-    PUBLISH_ARTIFACT_ID = 'oblique'
-    PUBLISH_VERSION = '2.2'
+plugins {
+    id 'com.android.library'
+    id 'maven-publish'
 }
+
+repositories {
+    mavenCentral()
+    google()
+    jcenter()
+    maven { url "https://jitpack.io" }
+}
+
+group = 'com.fxn769.oblique'
+version = '2.2'
 
 android {
     compileSdkVersion 29
@@ -36,8 +43,20 @@ allprojects {
 }
 
 dependencies {
-    implementation "androidx.annotation:annotation:1.1.0"
-    implementation "androidx.core:core:1.2.0"
+    implementation 'androidx.annotation:annotation:1.2.0'
+    implementation 'androidx.core:core:1.3.2'
 }
 
-apply from: 'https://raw.githubusercontent.com/blundell/release-android-library/master/android-release-aar.gradle'
+afterEvaluate {
+    publishing {
+        publications {
+            // Creates a Maven publication called "release".
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.fxn769'
+                artifactId = 'oblique'
+                version = '2.2'
+            }
+        }
+    }
+}
